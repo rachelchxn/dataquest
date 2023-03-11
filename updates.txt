@@ -1,0 +1,15 @@
+trouble with categorical data
+month and date variables into day of the year
+
+tried dropping categorical features
+    bookingID should be removed
+
+turn mealplan, RoomType, MarketSegment divided into dummy categories
+
+combined weekend and weekday nights
+
+total prev bookings = canceled + non canceled
+
+total guests = adults + NumChildren
+
+total price = avg price * days
