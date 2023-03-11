@@ -1,0 +1,96 @@
+trouble with categorical data
+month and date variables into day of the year
+
+tried dropping categorical features
+    bookingID should be removed
+
+turn mealplan, RoomType, MarketSegment divided into dummy categories
+
+combined weekend and weekday nights
+
+total prev bookings = canceled + non canceled
+
+total guests = adults + NumChildren
+
+total price = avg price * days
+
+find the ideal customer (combination of features least likely to cancel their stay)
+
+
+RandomForestClassifier
+RandomForestClassifier(random_state=42)
+
+Before Parent Feature Addition:
+
+Accuracy: 0.899494601424305
+Precision: 0.9117598548573314
+Recall: 0.9420586230402181
+F1 Score: 0.9266616377503981
+ 1) LeadTime                       31.81%
+ 2) AvgRoomPrice                   16.05%
+ 3) SpecialRequests                9.61%
+ 4) ArrivalDate                    9.10%
+ 5) ArrivalMonth                   8.19%
+ 6) NumWeekNights                  5.30%
+ 7) MarketSegment                  5.11%
+ 8) NumWeekendNights               3.80%
+ 9) ArrivalYear                    2.79%
+10) NumAdults                      2.52%
+11) MealPlan                       2.23%
+12) RoomType                       1.72%
+13) NumChildren                    0.80%
+14) Parking                        0.57%
+15) RepeatedGuest                  0.19%
+16) NumPreviousNonCancelled        0.19%
+17) NumPrevCancellations           0.04%
+
+Before Parent Feature Removal:
+
+Accuracy: 0.8967378819205146
+Precision: 0.9070948713747338
+Recall: 0.9434219495569189
+F1 Score: 0.9249018461281431
+ 1) LeadTime                       26.89%
+ 2) AvgRoomPrice                   11.31%
+ 3) SpecialRequests                9.76%
+ 4) TotalPrice                     9.53%
+ 5) ArrivalDayOfYear               9.04%
+ 6) ArrivalDate                    6.26%
+ 7) ArrivalMonth                   4.70%
+ 8) MarketSegment                  4.34%
+ 9) TotalNights                    2.89%
+10) NumWeekNights                  2.86%
+11) ArrivalYear                    2.38%
+12) NumWeekendNights               2.30%
+13) MealPlan                       2.01%
+14) TotalGuests                    1.70%
+15) NumAdults                      1.40%
+16) RoomType                       1.31%
+17) Parking                        0.50%
+18) NumChildren                    0.49%
+19) NumPreviousNonCancelled        0.16%
+20) RepeatedGuest                  0.14%
+21) NumPrevCancellations           0.03%
+
+After Parent Feature Removal:
+
+Accuracy: 0.8862853204686423
+Precision: 0.9022097625329816
+Recall: 0.9323449216087253
+F1 Score: 0.9170298357358364
+Confusion Matrix:
+ [[2245  593]
+ [ 397 5471]]
+ 1) LeadTime                       34.62%
+ 2) ArrivalDayOfYear               18.25%
+ 3) TotalPrice                     17.95%
+ 4) SpecialRequests                9.34%
+ 5) TotalNights                    5.70%
+ 6) MarketSegment                  5.57%
+ 7) TotalGuests                    3.24%
+ 8) MealPlan                       2.23%
+ 9) RoomType                       2.00%
+10) Parking                        0.66%
+11) NumPreviousNonCancelled        0.21%
+12) RepeatedGuest                  0.18%
+13) NumPrevCancellations           0.04%
