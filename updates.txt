@@ -94,3 +94,13 @@ Confusion Matrix:
 11) NumPreviousNonCancelled        0.21%
 12) RepeatedGuest                  0.18%
 13) NumPrevCancellations           0.04%
+
+Features to add:
+Cancellation rate
+If its a Holiday
+
+RTC:
+BOotstrapping
+Over-fitting
+
+INflation of variable importance.
