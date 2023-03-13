@@ -1,5 +1,5 @@
 trouble with categorical data
-month and date variables into day of the year
+turn month and date variables into day of the year
 
 tried dropping categorical features
     bookingID should be removed
